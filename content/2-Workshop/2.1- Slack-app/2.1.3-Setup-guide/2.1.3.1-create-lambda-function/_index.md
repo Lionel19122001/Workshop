@@ -23,7 +23,7 @@ In this step, you will deploy a Python Lambda function that receives Slack slash
 3. In the Create function interface
 - Select Author from scratch
 - Function name, enter myFunctionSSM
-- Runtime, select Python 3.8
+- Runtime, select Python 3.14
 - Select x86_64
 - Select Use another role
 - Click Create new role
@@ -45,34 +45,7 @@ In this step, you will deploy a Python Lambda function that receives Slack slash
 #### 2. Add function code
 Download Lambda source package
 - [Download Slack-ssm.zip](/downloads/Slack-ssm.zip)
+- Upload file Slack-ssm.zip from local
+![overview](/images/2.1-Slack/11.png)
+![overview](/images/2.1-Slack/12.png)
 
-#### 3. Configure environment variables
-Add environment variables in Lambda configuration:
-- `SLACK_SIGNING_SECRET`
-- `AWS_REGION`
-- `DEFAULT_PARAMETER_TIER` (optional)
-
-If possible, load sensitive values from Secrets Manager or Parameter Store at runtime instead of plain text environment values.
-
-#### 4. Create Lambda Function URL (or API Gateway)
-1. In Lambda, open **Function URL** and create a new URL.
-2. Set authentication according to your design (commonly `NONE` for Slack webhooks).
-3. Keep security at application level by validating Slack signature for every request.
-4. Copy the function URL and update Slack Slash Command Request URL.
-
-#### 6. Configure timeout and memory
-Recommended baseline:
-- Timeout: 10-15 seconds
-- Memory: 256 MB
-
-These settings are usually enough for Slack command processing and SSM API calls.
-
-#### 7. Verify CloudWatch logging
-1. Invoke the function with a test event.
-2. Open CloudWatch Logs and verify:
-- Function starts successfully
-- Request parsing works
-- SSM API call result is logged
-- Proper error details are present when failures occur
-
-After this step, continue to the test section to run slash commands from Slack and validate end-to-end behavior.

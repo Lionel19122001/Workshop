@@ -30,7 +30,6 @@ The system integrates Slack with AWS services to automate parameter management t
 	[Automating SSM Parameter Creation via Slack](2.1- Slack-app)
 
 <!-- 2. **Frame 2 - Environment Setup**
-	[Prerequiste](2.2-Prerequiste/)
 
 3. **Frame 3 - Private Access from VPC**
 	[Access S3 from VPC](2.3-S3-vpc/)

@@ -26,4 +26,3 @@ Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gat
 #### Nội dung
 
 1. [Tổng quan về workshop](2.1- Slack-app/)
-2. [Chuẩn bị](2.2-Prerequiste/)
